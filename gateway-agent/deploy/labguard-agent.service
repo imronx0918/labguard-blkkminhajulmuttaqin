@@ -1,0 +1,18 @@
+[Unit]
+Description=LABGUARD EDU - Lab Gateway Agent
+After=network-online.target nftables.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/labguard-agent/labguard_agent.py --config /etc/labguard-agent/agent.json run
+Restart=always
+RestartSec=10
+# Agent membutuhkan CAP_NET_ADMIN (nftables) dan izin mengelola unit labguard-dnsmasq@.
+User=root
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

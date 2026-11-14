@@ -1,0 +1,14 @@
+[Unit]
+Description=LABGUARD EDU - DNS filtering lab %i (dnsmasq)
+After=network-online.target
+ConditionPathExists=/etc/labguard-agent/dnsmasq/lab-%i.conf
+
+[Service]
+Type=simple
+ExecStartPre=/usr/sbin/dnsmasq --test --conf-file=/etc/labguard-agent/dnsmasq/lab-%i.conf
+ExecStart=/usr/sbin/dnsmasq -k --conf-file=/etc/labguard-agent/dnsmasq/lab-%i.conf --pid-file=/run/labguard-dnsmasq-%i.pid
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,41 @@
+{
+  "indexes": [
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "type", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "labId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "deviceId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "gatewayId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "domain", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "classId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "category", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "accessLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "sessionId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "auditLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "action", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "auditLogs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "userId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "sessions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "labId", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "sessions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "sessions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "teacherId", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "sessions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "classId", "order": "ASCENDING" }, { "fieldPath": "startAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "sessions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "labId", "order": "ASCENDING" }, { "fieldPath": "date", "order": "ASCENDING" }] },
+    { "collectionGroup": "sessions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "date", "order": "ASCENDING" }] },
+    { "collectionGroup": "policyDeployments", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "gatewayId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "policyDeployments", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "gatewayId", "order": "ASCENDING" }, { "fieldPath": "status", "order": "ASCENDING" }] },
+    { "collectionGroup": "policyDeployments", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "gatewayId", "order": "ASCENDING" }, { "fieldPath": "bundleHash", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "policyDeployments", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "permissionRequests", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "requestedBy", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "permissionRequests", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "permissionRequests", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "requestedBy", "order": "ASCENDING" }, { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "gatewayHeartbeats", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "gatewayId", "order": "ASCENDING" }, { "fieldPath": "ts", "order": "DESCENDING" }] },
+    { "collectionGroup": "configBackups", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "gatewayId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "notifications", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "audience", "arrayConfig": "CONTAINS" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "notifications", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "dedupeKey", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "ASCENDING" }] },
+    { "collectionGroup": "devices", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "labId", "order": "ASCENDING" }, { "fieldPath": "name", "order": "ASCENDING" }] },
+    { "collectionGroup": "devices", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "lastSeenAt", "order": "ASCENDING" }] },
+    { "collectionGroup": "devices", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "labId", "order": "ASCENDING" }, { "fieldPath": "lastSeenAt", "order": "ASCENDING" }] },
+    { "collectionGroup": "devices", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "policyApplyStatus", "order": "ASCENDING" }, { "fieldPath": "credentialStatus", "order": "ASCENDING" }] },
+    { "collectionGroup": "students", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "classId", "order": "ASCENDING" }, { "fieldPath": "name", "order": "ASCENDING" }] },
+    { "collectionGroup": "blockedDomains", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "categoryId", "order": "ASCENDING" }, { "fieldPath": "domain", "order": "ASCENDING" }] },
+    { "collectionGroup": "allowedDomains", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "temporary", "order": "ASCENDING" }, { "fieldPath": "domain", "order": "ASCENDING" }] }
+  ],
+  "fieldOverrides": [
+    { "collectionGroup": "agentNonces", "fieldPath": "expiresAt", "ttl": true, "indexes": [{ "order": "ASCENDING", "queryScope": "COLLECTION" }] }
+  ]
+}

@@ -1,0 +1,13 @@
+# Catatan: mode systemd (installer) direkomendasikan karena agent mengelola unit labguard-dnsmasq@.
+# Mode Docker ini menjalankan agent dengan allow_network_changes sesuai agent.json; instance dnsmasq
+# harus dijalankan di host. Gunakan untuk lingkungan uji.
+services:
+  labguard-agent:
+    build: .
+    network_mode: host
+    cap_add: [NET_ADMIN]
+    restart: unless-stopped
+    volumes:
+      - /etc/labguard-agent:/etc/labguard-agent
+      - /var/lib/labguard-agent:/var/lib/labguard-agent
+      - /var/log/labguard:/var/log/labguard

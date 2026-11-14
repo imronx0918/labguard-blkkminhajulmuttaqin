@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-server
+.env
+.env.*
+!.env.example
+data/*.json
+service-account*.json
+*.pem
+__pycache__
+.pytest_cache
+gateway-agent/.venv

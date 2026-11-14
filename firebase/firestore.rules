@@ -1,0 +1,26 @@
+rules_version = '2';
+// =====================================================================
+// LABGUARD EDU — Firestore Security Rules (DEFAULT DENY)
+// Seluruh baca/tulis data aplikasi dilakukan oleh backend (Firebase Admin SDK) yang memverifikasi
+// peran di server. Admin SDK melewati rules; klien browser TIDAK diberi akses langsung kecuali
+// membaca profil miliknya sendiri. Koleksi sensitif (gatewaySecrets, deviceCredentials, auditLogs,
+// agentNonces) tidak pernah dapat diakses dari klien.
+// =====================================================================
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function role() { return request.auth.token.role; }
+
+    // Pengguna hanya boleh MEMBACA dokumen profilnya sendiri. Perubahan peran hanya lewat backend.
+    match /users/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // Pengaturan publik non-sensitif tidak dibaca langsung — gunakan GET /api/public/config.
+    // Semua koleksi lain: DITOLAK untuk klien (default deny).
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
